@@ -36,6 +36,6 @@ Each hash module has two functions. The "f"
 function is called forth for file hashes. The 
 "s" function is called forth for string hashes.
 
-#OLD VERSION
+# OLD VERSION
 
 Can be found at www.github.com/anguianoewi/hashgeneratorOld
