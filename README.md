@@ -22,6 +22,7 @@ SHA-1   |  SHA 512   |  SHA3 512
 SHA 224 |  SHA3 224  |  SHAKE 128 (64-bit output)
 
 SHA 256 |  SHA3 256  |  SHAKE 256 (64-bit output)
+
 BLAKE2B | BLAKE2S
 
 All fourteen work correctly and refresh every time its function is used.
@@ -34,3 +35,7 @@ be truly modular and reuseable
 Each hash module has two functions. The "f" 
 function is called forth for file hashes. The 
 "s" function is called forth for string hashes.
+
+#OLD VERSION
+
+Can be found at www.github.com/anguianoewi/hashgeneratorOld
