@@ -9,7 +9,7 @@ BLOCKSIZE=65536
 
 
 def f(n):
-    _h = hashlib.sha3_384()
+    _h = hashlib.sha3_512()
     with open(n, 'rb') as afile:
         buf = afile.read(BLOCKSIZE)
         while len(buf) > 0:
@@ -20,7 +20,7 @@ def f(n):
         return H
 
 def s(n):
-    _h = hashlib.sha384()
+    _h = hashlib.sha512()
     buf = n.encode()
     _h.update(buf)
     H = _h.hexdigest()
