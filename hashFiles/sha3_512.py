@@ -20,7 +20,7 @@ def f(n):
         return H
 
 def s(n):
-    _h = hashlib.sha512()
+    _h = hashlib.sha3_512()
     buf = n.encode()
     _h.update(buf)
     H = _h.hexdigest()

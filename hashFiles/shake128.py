@@ -20,7 +20,7 @@ def f(n):
         return H
 
 def s(n):
-    _h = hashlib.shake_256()
+    _h = hashlib.shake_128()
     buf = n.encode()
     _h.update(buf)
     H = _h.hexdigest(64)
