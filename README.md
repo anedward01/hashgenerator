@@ -48,7 +48,6 @@ function is called forth for file hashes. The
 # Potential Changes
 - Add a progress update (This is very hard to do at the moment)
 - Add an option to save a hash into a file (This can be done within the next two weeks)
-- Restructure functions to only return hash value and not print out the result. This will allow for the potential gui update to work properly.
 
 # OLD VERSION
 
