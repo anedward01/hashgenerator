@@ -16,14 +16,13 @@ def f(n):
             _h.update(buf)
             H = _h.hexdigest()
             buf = afile.read(BLOCKSIZE)
-        print('MD5:       ' + H)
         return H
+    return H
+
 
 def s(n):
     _h = hashlib.md5()
     buf = n.encode()
     _h.update(buf)
     H = _h.hexdigest()
-    print(n)
-    print('MD5:       ' + H)
     return H

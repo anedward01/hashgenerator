@@ -45,59 +45,59 @@ def s(n):
         isFin = False
 
         if 'md5' in hType:
-            _m5s____(n)
+            print('MD5:       ' + _m5s____(n))
             isFin = True
 
         if 'sha1' in hType:
-            _s1_1s(n)
+            print('SHA 1:     ' + _s1_1s(n))
             isFin = True
 
         if 'sha224' in hType:
-            _s1_224s(n)
+            print('SHA 224:   ' + _s1_224s(n))
             isFin = True
 
         if 'sha256' in hType:
-            _s1_256s(n)
+            print('SHA 256:   ' + _s1_256s(n))
             isFin = True
         
         if 'sha384' in hType:
-            _s1_384s(n)
+            print('SHA 384:   ' + _s1_384s(n))
             isFin = True
 
         if 'sha512' in hType:
-            _s1_512s(n)
+            print('SHA 512:   ' + _s1_512s(n))
             isFin = True
 
         if 'sha3224' in hType:
-            _s3_224s(n)
+            print('SHA3 224:  ' + _s3_224s(n))
             isFin = True
 
         if 'sha3256' in hType:
-            _s3_256s(n)
+            print('SHA3 256:  ' + _s3_256s(n))
             isFin = True
 
         if 'sha3384' in hType:
-            _s3_384s(n)
+            print('SHA3 384:  ' + _s3_384s(n))
             isFin = True
 
         if 'sha3512' in hType:
-            _s3_512s(n)
+            print('SHA3 512:  ' + _s3_512s(n))
             isFin = True
 
         if 'shake128' in hType:
-            _sh_128s(n)
+            print('SHAKE 128: ' + _sh_128s(n))
             isFin = True
 
         if 'shake256' in hType:
-            _sh_256s(n)
+            print('SHAKE 256: ' + _sh_256s(n))
             isFin = True
 
         if 'blake2b' in hType:
-            _blake2bs(n)
+            print('BLAKE2B:   ' + _blake2bs(n))
             isFin = True
-            
+
         if 'blake2s' in hType:
-            _blake2ss(n)
+            print('BLAKE2S:   ' + _blake2ss(n))
             isFin = True
 
         if isFin == True:

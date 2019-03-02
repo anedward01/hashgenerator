@@ -16,7 +16,6 @@ def f(n):
             _h.update(buf)
             H = _h.hexdigest(64)
             buf = afile.read(BLOCKSIZE)
-        print('SHAKE 256: ' + H)
         return H
 
 def s(n):
@@ -24,5 +23,4 @@ def s(n):
     buf = n.encode()
     _h.update(buf)
     H = _h.hexdigest(64)
-    print('SHAKE 256: ' + H)
     return H
