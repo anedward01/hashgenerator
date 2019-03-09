@@ -110,11 +110,15 @@ def f(n):
         if 'blake2s' in hType:
             print('BLAKE2S:        ' + _blake2sf(n))
             isFin = True
+        
+        if hType == 'e' or hType =='exit':
+            sys.exit(0)
 
         if isFin == True:
             _nul = input('Press Enter to continue...')
             _cls____()
             break
             return n
+
         else:
             continue

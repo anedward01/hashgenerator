@@ -44,4 +44,4 @@ while True:
         _help()
 
     elif fType == 'e' or fType == 'exit':
-        sys.exit()
+        sys.exit(0)

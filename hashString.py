@@ -39,7 +39,6 @@ _blake2ss = blake2s.s
 _sh_128cs = shake128c.s
 _sh_256cs = shake256c.s
 
-
 def s(n):
     for i in range(999999):
         _cls____()
@@ -112,6 +111,9 @@ def s(n):
         if 'blake2s' in hType:
             print('BLAKE2S:        ' + _blake2ss(n))
             isFin = True
+
+        if hType == 'e' or hType =='exit':
+            sys.exit(0)
 
         if isFin == True:
             _nul = input('Press Enter to continue...')
