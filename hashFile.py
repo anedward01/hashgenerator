@@ -40,9 +40,13 @@ _sh_128cf = shake128c.f
 _sh_256cf = shake256c.f
 
 def f(n):
-    __md5 = 'HASH NOT RUN'; __sha1 = 'HASH NOT RUN'; __sha224 = 'HASH NOT RUN'; __sha256 = 'HASH NOT RUN'; __sha384 = 'HASH NOT RUN'; __sha512 = 'HASH NOT RUN'
-    __sha3_224 = 'HASH NOT RUN'; __sha3_256 = 'HASH NOT RUN'; __sha3_384 = 'HASH NOT RUN'; __sha3_512 = 'HASH NOT RUN'; __bla2s = 'HASH NOT RUN'
-    __bla2b = 'HASH NOT RUN'; __sh128 = 'HASH NOT RUN'; __sh128c = 'HASH NOT RUN'; __sh256 = 'HASH NOT RUN'; __sh256c = 'HASH NOT RUN'
+    __md5 = 'HASH NOT RUN'; __sha1 = 'HASH NOT RUN'; __sha224 = 'HASH NOT RUN'
+    __sha256 = 'HASH NOT RUN'; __sha384 = 'HASH NOT RUN'; __sha512 = 'HASH NOT RUN'
+    __sha3_224 = 'HASH NOT RUN'; __sha3_256 = 'HASH NOT RUN'; __sha3_384 = 'HASH NOT RUN'
+    __sha3_512 = 'HASH NOT RUN'; __bla2s = 'HASH NOT RUN'; __bla2b = 'HASH NOT RUN'
+    __sh128 = 'HASH NOT RUN'; __sh128c = 'HASH NOT RUN'; __sh256 = 'HASH NOT RUN'
+    __sh256c = 'HASH NOT RUN'
+     
     for i in range(999999):
         _cls____()
         print('File Path: "' + n + '"')
