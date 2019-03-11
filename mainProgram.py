@@ -22,10 +22,11 @@ while True:
 
     if fType == 'file' or fType == 'f':
         filePath = input('File Path: ')
-
         if os.path.exists(filePath):
 
             hashFile.f(filePath)
+        else:
+            print('File location does not exist!')
 
     elif fType == 'string' or fType == 's':
         string = input('String: ')
