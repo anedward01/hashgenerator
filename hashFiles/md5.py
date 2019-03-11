@@ -19,7 +19,6 @@ def f(n):
         return H
     return H
 
-
 def s(n):
     _h = hashlib.md5()
     buf = n.encode()

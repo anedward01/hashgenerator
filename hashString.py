@@ -3,6 +3,7 @@ import sys
 import os
 import os.path
 import subFiles.cls as  cls_
+import subFiles.exportToFile as expFile
 import hashFiles.md5 as md5
 import hashFiles.sha1 as sha1
 import hashFiles.sha224 as sha224
@@ -38,78 +39,141 @@ _blake2bs = blake2b.s
 _blake2ss = blake2s.s
 _sh_128cs = shake128c.s
 _sh_256cs = shake256c.s
+_writeH = expFile.fileWrite
+_writeT = expFile.titleWrite
 
 def s(n):
     for i in range(999999):
         _cls____()
         print('String: "' + n + '"')
+        print('Would you like to save the results to a file?')
+        saveFile = input()
+        sFile = saveFile.lower().replace (' ','').strip()
+
+        if sFile == 'yes' or sFile == 'y':
+            saveToFile = 1
+            expMod = 1
+            while os.path.exists('Saved Hash File ' + str(expMod) + '.txt'):
+                expMod += 1
+            saveLocation = ('Saved Hash File ' + str(expMod) + '.txt')
+            _writeT(n, saveLocation)
+            print('Hash file "' + saveLocation + '" created in source folder.')
+
         hashType = input('Hash method: ')
         hType = hashType.lower().replace(' ','').strip()
         print('')
         isFin = False
 
         if 'md5' in hType:
-            print('MD5:            ' + _md5s___(n))
+            __md5 = ('MD5:            ' + _md5s___(n))
+            print(__md5)
+            if saveToFile == 1:
+                _writeH(__md5, saveLocation)
             isFin = True
 
         if 'sha1' in hType:
-            print('SHA 1:          ' + _s1_1s__(n))
+            __sha1 = ('SHA 1:          ' + _s1_1s__(n))
+            print(__sha1)
+            if saveToFile == 1:
+                _writeH(__sha1, saveLocation)
             isFin = True
 
         if 'sha224' in hType:
-            print('SHA 224:        ' + _s1_224s(n))
+            __sha224 = ('SHA 224:        ' + _s1_224s(n))
+            print(__sha224)
+            if saveToFile == 1:
+                _writeH(__sha224, saveLocation)
             isFin = True
 
         if 'sha256' in hType:
-            print('SHA 256:        ' + _s1_256s(n))
+            __sha256 = ('SHA 256:        ' + _s1_256s(n))
+            print(__sha256)
+            if saveToFile == 1:
+                _writeH(__sha256, saveLocation)
             isFin = True
         
         if 'sha384' in hType:
-            print('SHA 384:        ' + _s1_384s(n))
+            __sha384 = ('SHA 384:        ' + _s1_384s(n))
+            print(__sha384)
+            if saveToFile == 1:
+                _writeH(__sha384, saveLocation)
             isFin = True
 
         if 'sha512' in hType:
-            print('SHA 512:        ' + _s1_512s(n))
+            __sha512 = ('SHA 512:        ' + _s1_512s(n))
+            print(__sha512)
+            if saveToFile == 1:
+                _writeH(__sha512, saveLocation)
             isFin = True
 
         if 'sha3224' in hType:
-            print('SHA3 224:       ' + _s3_224s(n))
+            __sha3_224 = ('SHA3 224:       ' + _s3_224s(n))
+            print(__sha3_224)
+            if saveToFile == 1:
+                _writeH(__sha3_224, saveLocation)
             isFin = True
 
         if 'sha3256' in hType:
-            print('SHA3 256:       ' + _s3_256s(n))
+            __sha3_256 = ('SHA3 256:       ' + _s3_256s(n))
+            print(__sha3_256)
+            if saveToFile == 1:
+                _writeH(__sha3_256, saveLocation)
             isFin = True
 
         if 'sha3384' in hType:
-            print('SHA3 384:       ' + _s3_384s(n))
+            __sha3_384 = ('SHA3 384:       ' + _s3_384s(n))
+            print(__sha3_384)
+            if saveToFile == 1:
+                _writeH(__sha3_384, saveLocation)
             isFin = True
 
         if 'sha3512' in hType:
-            print('SHA3 512:       ' + _s3_512s(n))
-            isFin = True
-
-        if 'shake128c' in hType:
-            print('SHAKE 128 FULL: ' + _sh_128cs(n))
+            __sha3_512 = ('SHA3 512:       ' + _s3_512s(n))
+            print(__sha3_512)
+            if saveToFile == 1:
+                _writeH(__sha3_512, saveLocation)
             isFin = True
 
         if 'shake128' in hType:
-            print('SHAKE 128 (64): ' + _sh_128s(n))
+            __sh128 = ('SHAKE 128 (64): ' + _sh_128s(n))
+            print(__sh128)
+            if saveToFile == 1:
+                _writeH(__sh128, saveLocation)
             isFin = True
 
-        if 'shake256c' in hType:
-            print('SHAKE 256 FULL: ' + _sh_256cs(n))
+        if 'shake128c' in hType:
+            __sh128c = ('SHAKE 128 FULL: ' + _sh_128cs(n))
+            print(__sh128c)
+            if saveToFile == 1:
+                _writeH(__sh128c, saveLocation)
             isFin = True
-        
+
         if 'shake256' in hType:
-            print('SHAKE 256 (64): ' + _sh_256s(n))
+            __sh256 = ('SHAKE 256 (64): ' + _sh_256s(n))
+            print(__sh256)
+            if saveToFile == 1:
+                _writeH(__sh256, saveLocation)
+            isFin = True
+
+        if 'shake256c'  in hType:
+            __sh256c = ('SHAKE 256 FULL: ' + _sh_256cs(n))
+            print(__sh256c)
+            if saveToFile == 1:
+                _writeH(__sh256c, saveLocation)
             isFin = True
 
         if 'blake2b' in hType:
-            print('BLAKE2B:        ' + _blake2bs(n))
+            __bla2b = ('BLAKE2B:        ' + _blake2bs(n))
+            print(__bla2b)
+            if saveToFile == 1:
+                _writeH(__bla2b, saveLocation)
             isFin = True
 
         if 'blake2s' in hType:
-            print('BLAKE2S:        ' + _blake2ss(n))
+            __bla2s = ('BLAKE2S:        ' + _blake2ss(n))
+            print(__bla2s)
+            if saveToFile == 1:
+                _writeH(__bla2s, saveLocation)
             isFin = True
 
         if hType == 'e' or hType =='exit':
