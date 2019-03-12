@@ -1,5 +1,5 @@
 # hashgenerator
-A simple Python program that gives 14 different hashing options for files and text.
+A simple Python program that gives 16 different hashing options for files and text.
 
 # Files
 1) Files must be located with the drive path. For example: 
@@ -13,7 +13,7 @@ A simple Python program that gives 14 different hashing options for files and te
 
 # Hash Methods
 
-There are twelve hash methods available.
+There are sixteen hash methods available.
 
 One hash method or multiple can be used at once. simply type them in at once. 
 
@@ -28,13 +28,13 @@ MD5     |  SHA 384   |  SHA3 384
 
 SHA-1   |  SHA 512   |  SHA3 512
 
-SHA 224 |  SHA3 224  |  SHAKE 128 (64-bit output)
+SHA 224 |  SHA3 224  |  SHAKE 128 (64-bit output and 128-bit output)
 
-SHA 256 |  SHA3 256  |  SHAKE 256 (64-bit output)
+SHA 256 |  SHA3 256  |  SHAKE 256 (64-bit output and 256-bit output)
 
 BLAKE2B | BLAKE2S
 
-All fourteen work correctly and refresh every time its function is used.
+All sixteen work correctly and refresh every time its function is used.
 
 # Hash Modules
 
@@ -45,10 +45,21 @@ Each hash module has two functions. The "f"
 function is called forth for file hashes. The 
 "s" function is called forth for string hashes.
 
+# Save to File
+
+A prompt to save to a file appears before selecting a hash method for
+both strings and files. The file is saved to the source folder
+appended by an associating number. 
+
+For example, if Saved Hash File 1 exists, then the append is increased to 
+2, resulting in Saved Hash File 2, and keeps going until a file doesn't exist 
+and can be created
+
 # Potential Changes
 - Add a progress update (This is very hard to do at the moment)
-- Add an option to save a hash into a file (This can be done within the next two weeks)
 
 # OLD VERSION
 
 Can be found at www.github.com/anguianoewi/hashgeneratorOld
+
+WARNING: THE OLD VERSION HAS BUGS AND SHOULD NOT BE USED
