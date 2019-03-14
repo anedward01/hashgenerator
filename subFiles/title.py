@@ -1,7 +1,7 @@
 import os
 
 def version():
-    vers = '3.0.0'
+    vers = '3.0.1'
     return vers
 
 def title():
