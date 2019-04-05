@@ -1,3 +1,9 @@
+# Hash Generator - Creates a hash using multiple methods
+# Copyright (C) 2019  Anguianoewi
+
+# You should have received a copy of the GNU General Public License
+# along with this program.  If not, see <http://www.gnu.org/licenses/>
+
 import sys
 import os
 import os.path
@@ -14,6 +20,13 @@ _vers = subFiles.title.version
 
 _cls()
 _title()
+
+print('Hash Generator - Creates a hash using multiple methods\n'
+'Copyright (C) 2019  Anguianoewi\n\n'
+'You should have received a copy of the GNU General Public License\n'
+'along with this program.  If not, see <http://www.gnu.org/licenses/>\n')
+input('Press Enter to continue')
+_cls()
 
 while True:
     print('Hash Generator Version ' + _vers())
