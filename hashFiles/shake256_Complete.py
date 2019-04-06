@@ -13,13 +13,13 @@ import os.path
 BLOCKSIZE=65536
 
 
-def f(n):
+def f(n, h):
     _h = hashlib.shake_256()
     with open(n, 'rb') as afile:
         buf = afile.read(BLOCKSIZE)
         while len(buf) > 0:
             _h.update(buf)
-            H = _h.hexdigest(256)
+            H = _h.hexdigest(h)
             buf = afile.read(BLOCKSIZE)
         return H
 
@@ -27,5 +27,5 @@ def s(n):
     _h = hashlib.shake_256()
     buf = n.encode()
     _h.update(buf)
-    H = _h.hexdigest(256)
+    H = _h.hexdigest(h)
     return H

@@ -71,6 +71,12 @@ def f(n):
         print('')
         isFin = False
 
+        if 'shake128c' in hType:
+            hb128 = input('Enter shake128 byte size: ')
+
+        if 'shake256c' in hType:
+            hb256 = input('Enter shake256 byte size: ')
+            
         if 'md5' in hType:
             __md5 = ('MD5:            ' + _md5f___(n))
             print(__md5)
@@ -149,7 +155,7 @@ def f(n):
             isFin = True
 
         if 'shake128c' in hType:
-            __sh128c = ('SHAKE 128 FULL: ' + _sh_128cf(n))
+            __sh128c = ('SHAKE 128 FULL: ' + _sh_128cf(n, hb128))
             print(__sh128c)
             if saveToFile == 1:
                 _writeH(__sh128c, saveLocation)
@@ -163,7 +169,7 @@ def f(n):
             isFin = True
 
         if 'shake256c'  in hType:
-            __sh256c = ('SHAKE 256 FULL: ' + _sh_256cf(n))
+            __sh256c = ('SHAKE 256 FULL: ' + _sh_256cf(n, hb128))
             print(__sh256c)
             if saveToFile == 1:
                 _writeH(__sh256c, saveLocation)
