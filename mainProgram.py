@@ -6,22 +6,23 @@
 
 import sys
 import os
-import os.path
 import hashFile
 import hashString
 import subFiles.cls
 import subFiles.title
 import subFiles.helpMain
+import subFiles.pathCheck
 
 _cls = subFiles.cls.cls
 _title = subFiles.title.title
 _help = subFiles.helpMain.h
 _vers = subFiles.title.version
+_path = subFiles.pathCheck.checkPath
 
 _cls()
 _title()
 
-print('Hash Generator - Creates a hash using multiple methods\n'
+print('Hash Generator - Creates checksums using multiple methods\n'
 'Copyright (C) 2019  Anguianoewi\n\n'
 'You should have received a copy of the GNU General Public License\n'
 'along with this program.  If not, see <http://www.gnu.org/licenses/>\n')
@@ -34,12 +35,18 @@ while True:
     fType = fileType.lower().replace(' ','').strip()
 
     if fType == 'file' or fType == 'f':
-        filePath = input('File Path: ')
-        if os.path.exists(filePath):
-
-            hashFile.f(filePath)
-        else:
-            print('File location does not exist!')
+        fileCheckVar = False
+        while fileCheckVar is False:
+            filePath = input('File Path: ')
+            fP = filePath.lower().strip().replace(' ','')
+            formalFile = _path(filePath)
+            if fP == "exit" or fP == "e" or fP =='quit':
+                sys.exit(0)
+            elif formalFile == None:
+                print('File location does not exist!')
+            else:
+                hashFile.f(formalFile)
+                fileCheckVar = True
 
     elif fType == 'string' or fType == 's':
         string = input('String: ')
