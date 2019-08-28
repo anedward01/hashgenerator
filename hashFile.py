@@ -53,7 +53,7 @@ def f(n):
     for i in range(999999):
         _cls____()
         print('File Path: "' + n + '"')
-        print('Would you like to save the results to a file?')
+        print('Save to file? [Y]es | [N]o')
         saveFile = input()
         sFile = saveFile.lower().replace (' ','').strip()
 
@@ -63,8 +63,16 @@ def f(n):
             while os.path.exists('Saved Hash File ' + str(expMod) + '.txt'):
                 expMod += 1
             saveLocation = ('Saved Hash File ' + str(expMod) + '.txt')
-            _writeT(n, saveLocation)
+            print('Enter file name or leave empty for default')
+            print('Saved Hash File ' + str(expMod))
+            fileName = input()
+            if fileName == '' or fileName == None:
+                _writeT(n, saveLocation)
+            else:
+                saveLocation = fileName
+                _writeT(n, saveLocation)
             print('Hash file "' + saveLocation + '" created in source folder.')
+        
 
         hashType = input('Hash method: ')
         hType = hashType.lower().replace(' ','').strip()

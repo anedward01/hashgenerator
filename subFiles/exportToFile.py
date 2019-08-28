@@ -11,15 +11,28 @@ import datetime
 
 def titleWrite(n, s):
     date = datetime.datetime.now()
-    saveLoc = open(s, 'w+')
-    fWrite = saveLoc.write
-    fWrite('Hash for file: ' + n + "\nCreated on " + date.isoformat() + "\n\n" )
-    return s
+    if '.txt' in s:
+        saveLoc = open(s, 'w+')
+        fWrite = saveLoc.write
+        fWrite('Hash for file: ' + n + "\nCreated on " + date.isoformat() + "\n\n" )
+        return s
+    else:
+        saveLoc = open(s + '.txt', 'w+')
+        fWrite = saveLoc.write
+        fWrite('Hash for file: ' + n + "\nCreated on " + date.isoformat() + "\n\n" )
+        return s
 
 def fileWrite(n, s):
-    saveLoc = open(s, 'a+')
-    prevData = saveLoc.read()
-    fWrite = saveLoc.write
-    fWrite(n + '\n')
-    return s
+    if '.txt' in s:
+        saveLoc = open(s, 'a+')
+        prevData = saveLoc.read()
+        fWrite = saveLoc.write
+        fWrite(n + '\n')
+        return s
+    else:
+        saveLoc = open(s + '.txt', 'a+')
+        prevData = saveLoc.read()
+        fWrite = saveLoc.write
+        fWrite(n + '\n')
+        return s
 
