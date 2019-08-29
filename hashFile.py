@@ -53,25 +53,32 @@ def f(n):
     for i in range(999999):
         _cls____()
         print('File Path: "' + n + '"')
-        print('Save to file? [Y]es | [N]o')
-        saveFile = input()
-        sFile = saveFile.lower().replace (' ','').strip()
+        complete = False
+        while complete is False:
 
-        if sFile == 'yes' or sFile == 'y':
-            saveToFile = 1
-            expMod = 1
-            while os.path.exists('Saved Hash File ' + str(expMod) + '.txt'):
-                expMod += 1
-            saveLocation = ('Saved Hash File ' + str(expMod) + '.txt')
-            print('Enter file name or leave empty for default')
-            print('Saved Hash File ' + str(expMod))
-            fileName = input()
-            if fileName == '' or fileName == None:
-                _writeT(n, saveLocation)
+            print('Save to file? [Y]es | [N]o')
+            saveFile = input()
+            sFile = saveFile.lower().replace (' ','').strip()
+
+            if sFile == 'yes' or sFile == 'y':
+                saveToFile = 1
+                expMod = 1
+                while os.path.exists('Saved Hash File ' + str(expMod) + '.txt'):
+                    expMod += 1
+                saveLocation = ('Saved Hash File ' + str(expMod) + '.txt')
+                print('Enter file name or leave empty for default')
+                print('Default: Saved Hash File ' + str(expMod))
+                fileName = input('New file name: ')
+                if fileName == '' or fileName == None:
+                    _writeT(n, saveLocation)
+                    
+                else:
+                    saveLocation = fileName
+                    _writeT(n, saveLocation)
+                print('Hash file "' + saveLocation + '" created in source folder.')
+                complete = True
             else:
-                saveLocation = fileName
-                _writeT(n, saveLocation)
-            print('Hash file "' + saveLocation + '" created in source folder.')
+                complete = False
         
 
         hashType = input('Hash method: ')

@@ -19,13 +19,13 @@ def f(n, h):
         buf = afile.read(BLOCKSIZE)
         while len(buf) > 0:
             _h.update(buf)
-            H = _h.hexdigest(h)
+            H = _h.hexdigest(int(h))
             buf = afile.read(BLOCKSIZE)
         return H
 
-def s(n):
+def s(n, h):
     _h = hashlib.shake_128()
     buf = n.encode()
     _h.update(buf)
-    H = _h.hexdigest(h)
+    H = _h.hexdigest(int(h))
     return H

@@ -51,18 +51,33 @@ def s(n):
     for i in range(999999):
         _cls____()
         print('String: "' + n + '"')
-        print('Would you like to save the results to a file?')
-        saveFile = input()
-        sFile = saveFile.lower().replace (' ','').strip()
+        
+        complete = False
+        while complete is False:
 
-        if sFile == 'yes' or sFile == 'y':
-            saveToFile = 1
-            expMod = 1
-            while os.path.exists('Saved Hash File ' + str(expMod) + '.txt'):
-                expMod += 1
-            saveLocation = ('Saved Hash File ' + str(expMod) + '.txt')
-            _writeT(n, saveLocation)
-            print('Hash file "' + saveLocation + '" created in source folder.')
+            print('Save to file? [Y]es | [N]o')
+            saveFile = input()
+            sFile = saveFile.lower().replace (' ','').strip()
+
+            if sFile == 'yes' or sFile == 'y':
+                saveToFile = 1
+                expMod = 1
+                while os.path.exists('Saved Hash File ' + str(expMod) + '.txt'):
+                    expMod += 1
+                saveLocation = ('Saved Hash File ' + str(expMod) + '.txt')
+                print('Enter file name or leave empty for default')
+                print('Default: Saved Hash File ' + str(expMod))
+                fileName = input('New file name: ')
+                if fileName == '' or fileName == None:
+                    _writeT(n, saveLocation)
+                    
+                else:
+                    saveLocation = fileName
+                    _writeT(n, saveLocation)
+                print('Hash file "' + saveLocation + '" created in source folder.')
+                complete = True
+            else:
+                complete = False
 
         hashType = input('Hash method: ')
         hType = hashType.lower().replace(' ','').strip()
@@ -160,14 +175,14 @@ def s(n):
             isFin = True
 
         if 'shake256' in hType:
-            __sh256 = ('SHAKE 256 (64): ' + _sh_256s(n, hb128))
+            __sh256 = ('SHAKE 256 (64): ' + _sh_256s(n))
             print(__sh256)
             if saveToFile == 1:
                 _writeH(__sh256, saveLocation)
             isFin = True
 
         if 'shake256c'  in hType:
-            __sh256c = ('SHAKE 256 FULL: ' + _sh_256cs(n))
+            __sh256c = ('SHAKE 256 FULL: ' + _sh_256cs(n, hb256))
             print(__sh256c)
             if saveToFile == 1:
                 _writeH(__sh256c, saveLocation)
