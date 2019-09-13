@@ -51,7 +51,7 @@ while True:
     elif fType == 'string' or fType == 's':
         string = input('String: ')
 
-        stringStrip = input('Strip white space? ([Y]es | [N]o)')
+        stringStrip = input('Strip white space? ([Y]es | [N]o): ')
         sStrip = stringStrip.lower().strip().replace(' ','')
 
         if sStrip == 'yes' or sStrip == 'y':

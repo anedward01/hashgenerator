@@ -51,13 +51,11 @@ _writeT = expFile.titleWrite
 information to hash file"""
 def f(n):
     for i in range(999999):
-        _cls____()
         print('File Path: "' + n + '"')
         complete = False
         while complete is False:
 
-            print('Save to file? [Y]es | [N]o')
-            saveFile = input()
+            saveFile = input('Save to file? ([Y]es | [N]o):')
             sFile = saveFile.lower().replace (' ','').strip()
 
             if sFile == 'yes' or sFile == 'y':
@@ -77,15 +75,21 @@ def f(n):
                     _writeT(n, saveLocation)
                 print('Hash file "' + saveLocation + '" created in source folder.')
                 complete = True
+            elif sFile == 'no' or sFile == 'n':
+                saveToFile = 0
+                complete = True
             else:
                 complete = False
         
-
+        _cls____()
+        print('File Path: "' + n + '"')
         hashType = input('Hash method: ')
         hType = hashType.lower().replace(' ','').strip()
         print('')
         isFin = False
 
+        _cls____()
+        print('File Path: "' + n + '"\n')
         if 'shake128c' in hType:
             hb128 = input('Enter shake128 byte size: ')
 
@@ -184,7 +188,7 @@ def f(n):
             isFin = True
 
         if 'shake256c'  in hType:
-            __sh256c = ('SHAKE 256 FULL: ' + _sh_256cf(n, hb128))
+            __sh256c = ('SHAKE 256 FULL: ' + _sh_256cf(n, hb256))
             print(__sh256c)
             if saveToFile == 1:
                 _writeH(__sh256c, saveLocation)

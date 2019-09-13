@@ -49,7 +49,6 @@ _writeT = expFile.titleWrite
 
 def s(n):
     for i in range(999999):
-        _cls____()
         print('String: "' + n + '"')
         
         complete = False
@@ -76,14 +75,21 @@ def s(n):
                     _writeT(n, saveLocation)
                 print('Hash file "' + saveLocation + '" created in source folder.')
                 complete = True
+            elif sFile == 'no' or sFile == 'n':
+                complete = True
+                saveToFile = 0
             else:
                 complete = False
 
+        _cls____()
+        print('String: "' + n + '"')
         hashType = input('Hash method: ')
         hType = hashType.lower().replace(' ','').strip()
         print('')
         isFin = False
 
+        _cls____()
+        print('String: "' + n + '"\n')
         if 'shake128c' in hType:
             hb128 = input('Enter shake128 byte size: ')
 
