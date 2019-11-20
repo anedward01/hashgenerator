@@ -49,7 +49,7 @@ _writeT = expFile.titleWrite
 
 def s(n):
     for i in range(999999):
-        print('String: "' + n + '"')
+        print('\nString: "' + n + '"')
         
         complete = False
         while complete is False:

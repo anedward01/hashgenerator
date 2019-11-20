@@ -51,7 +51,7 @@ _writeT = expFile.titleWrite
 information to hash file"""
 def f(n):
     for i in range(999999):
-        print('File Path: "' + n + '"')
+        print('\nFile Path: "' + n + '"')
         complete = False
         while complete is False:
 
